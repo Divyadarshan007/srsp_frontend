@@ -45,6 +45,13 @@ html {
   overflow: hidden;
 }
 
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 /* Fade animation for testimonial */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
@@ -61,4 +68,24 @@ html {
 }
 .animate-marquee {
   animation: marquee 22s linear infinite;
+}
+
+/* Marquee outlined word — border matches fill color, hover fills it */
+.marquee-outlined {
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 1px #0F3D3E;
+}
+.marquee-outlined::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #0F3D3E;
+  -webkit-text-stroke: 0px transparent;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.5s ease;
+}
+.marquee-outlined:hover::after {
+  clip-path: inset(0 -0.3em 0 0);
 }

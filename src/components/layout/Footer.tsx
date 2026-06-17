@@ -1,100 +1,109 @@
-import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
-import { CONTACT } from "@/lib/contact";
+"use client";
 
-const footerLinks: Record<string, { label: string; href: string }[]> = {
-  Information: [
-    { label: "About Us", href: "#" },
-    { label: "Our Partners", href: "#team" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "Privacy Policy", href: "#" },
-  ],
-  "Useful Links": [
-    { label: "Home", href: "#hero" },
-    { label: "Services", href: "#services" },
-    { label: "Case Study", href: "#case-studies" },
-    { label: "Blog", href: "#blog" },
-    { label: "Contact Us", href: "#consultation" },
-  ],
-  Service: [
-    { label: "Finance Management", href: "#services" },
-    { label: "Tax Planning", href: "#services" },
-    { label: "Credit Counseling", href: "#services" },
-    { label: "Management Accounting", href: "#services" },
-    { label: "Design Inspiration", href: "#services" },
-  ],
-};
+import { useState } from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
+const footerColumns = [
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Contact Us", href: "/contact" },
+    ],
+  },
+  {
+    title: "Quick Links",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
+  {
+    title: "Our Services",
+    links: [
+      { label: "Finance Management", href: "/services" },
+      { label: "Tax Planning Solutions", href: "/services" },
+      { label: "Credit Counseling", href: "/services" },
+      { label: "Management Accounting", href: "/services" },
+    ],
+  },
+];
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmail("");
+  };
+
   return (
-    <footer className="bg-heading text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex flex-col leading-tight mb-5">
-              <span
-                className="text-white font-bold text-xl tracking-tight"
-                style={{ fontFamily: "var(--font-jakarta)" }}
-              >
-                S R S P &amp; Co
-              </span>
-              <span
-                className="text-primary-light text-xs font-medium tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-dm)" }}
-              >
-                Chartered Accountants
-              </span>
-            </div>
-            <p
-              className="text-white/60 text-sm leading-relaxed mb-6 max-w-xs"
-              style={{ fontFamily: "var(--font-dm)" }}
+    <footer className="bg-primary text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+
+        {/* CTA Row */}
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight"
+              style={{ fontFamily: "var(--font-jakarta)" }}
             >
-              Accuracy • Integrity • Commitment
-            </p>
-            <div className="space-y-3">
-              {[
-                { icon: MapPin, text: `${CONTACT.address.line1}, ${CONTACT.address.line2}` },
-                { icon: Phone, text: CONTACT.phone },
-                { icon: Mail, text: CONTACT.email },
-              ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
-                    <Icon size={14} className="text-primary-light" />
-                  </div>
-                  <span
-                    className="text-white/60 text-sm"
-                    style={{ fontFamily: "var(--font-dm)" }}
-                  >
-                    {text}
-                  </span>
-                </div>
-              ))}
-            </div>
+              Get the support you need,<br />when you need it
+            </h2>
           </div>
 
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <div key={title}>
+          <div className="lg:pt-1">
+            <p
+              className="text-white text-sm font-medium mb-3"
+              style={{ fontFamily: "var(--font-dm)" }}
+            >
+              Sign up for our Newsletter
+            </p>
+            <form onSubmit={handleSubmit} className="relative flex items-center">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+                className="w-full px-5 py-4 rounded-lg bg-white text-heading placeholder-gray-400 text-sm focus:outline-none"
+                style={{ fontFamily: "var(--font-dm)" }}
+              />
+              <button
+                type="submit"
+                className="absolute right-2 w-9 h-9 rounded-full bg-heading flex items-center justify-center hover:opacity-80 transition-opacity duration-200 shrink-0"
+              >
+                <ArrowUpRight size={16} className="text-white" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-white/25 mt-12 mb-12" />
+
+        {/* Footer Link Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
+          {footerColumns.map((col) => (
+            <div key={col.title}>
               <h4
                 className="text-white font-semibold text-sm mb-5"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
-                {title}
+                {col.title}
               </h4>
               <ul className="space-y-3">
-                {links.map((link) => (
+                {col.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
-                      className="text-white/50 text-sm hover:text-primary-light transition-colors duration-200 flex items-center gap-1.5 group"
+                      className="text-white/60 text-sm hover:text-white transition-colors duration-200"
                       style={{ fontFamily: "var(--font-dm)" }}
                     >
-                      <ArrowRight
-                        size={12}
-                        className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-200 text-primary-light"
-                      />
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -102,7 +111,8 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-white/10 mt-14 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        {/* Copyright Bar */}
+        <div className="border-t border-white/20 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p
             className="text-white/40 text-xs"
             style={{ fontFamily: "var(--font-dm)" }}
@@ -116,6 +126,7 @@ export default function Footer() {
             Designed with care for financial excellence
           </p>
         </div>
+
       </div>
     </footer>
   );

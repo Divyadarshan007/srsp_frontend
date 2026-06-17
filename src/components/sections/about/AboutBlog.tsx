@@ -3,29 +3,30 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import { blogPosts, type BlogPost } from "@/lib/blog";
 
-const posts = blogPosts.slice(0, 3);
+const posts = blogPosts.slice(2, 5);
 
-export default function Blog() {
+export default function AboutBlog() {
   return (
-    <section id="blog" className="py-24 bg-[#F8FFFE]">
+    <section className="py-24 bg-[#F8FFFE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
+        <div className="grid lg:grid-cols-2 gap-8 items-end mb-14">
           <div>
-            <SectionLabel text="From The Blog" />
+            <SectionLabel text="Blog & News" />
             <h2
-              className="text-3xl sm:text-4xl font-extrabold text-heading mt-5 leading-tight max-w-lg"
+              className="text-3xl sm:text-4xl font-extrabold text-heading mt-5 leading-tight"
               style={{ fontFamily: "var(--font-jakarta)" }}
             >
               Latest articles and updates on financial management
             </h2>
           </div>
-          <Link
-            href="/blog"
-            className="flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all duration-200 shrink-0"
+          <p
+            className="text-body leading-relaxed lg:pt-10"
             style={{ fontFamily: "var(--font-dm)" }}
           >
-            View All Articles <ArrowUpRight size={16} />
-          </Link>
+            Explore expert insights, practical financial tips, and industry
+            updates designed to keep you informed, empowered, and confident in
+            making smarter financial decisions.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -58,17 +59,11 @@ function BlogCard({ category, title, excerpt, date, readTime, image }: BlogPost)
 
       <div className="p-6">
         <div className="flex items-center gap-4 text-xs text-body mb-3">
-          <span
-            className="flex items-center gap-1.5"
-            style={{ fontFamily: "var(--font-dm)" }}
-          >
+          <span className="flex items-center gap-1.5" style={{ fontFamily: "var(--font-dm)" }}>
             <Calendar size={12} className="text-primary" />
             {date}
           </span>
-          <span
-            className="flex items-center gap-1.5"
-            style={{ fontFamily: "var(--font-dm)" }}
-          >
+          <span className="flex items-center gap-1.5" style={{ fontFamily: "var(--font-dm)" }}>
             <Clock size={12} className="text-primary" />
             {readTime}
           </span>

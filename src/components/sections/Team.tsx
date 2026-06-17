@@ -17,16 +17,21 @@ const members = [
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
   },
+  {
+    name: "CA Priya R. Mehta",
+    role: "B.Com. | ACA | DISA",
+    image:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80",
+  },
 ];
 
 const socials = [
   {
-    label: "Dribbble",
+    label: "LinkedIn",
     href: "#",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} className="w-4 h-4">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
       </svg>
     ),
   },
@@ -52,20 +57,15 @@ const socials = [
 
 function TeamCard({ name, role, image }: (typeof members)[0]) {
   return (
-    /* Outer wrapper — no overflow hidden so popup can escape the card */
     <div className="relative rounded-2xl" style={{ flex: "0 0 calc(33.333% - 16px)" }}>
-
-      {/* Image container — overflow hidden only here */}
       <div className="relative rounded-2xl overflow-hidden h-96 sm:h-105">
         <img
           src={image}
           alt={name}
           className="w-full h-full object-cover object-top"
         />
-        {/* Bottom gradient */}
         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
 
-        {/* Name + role */}
         <div className="absolute bottom-0 left-0 right-0 px-5 pb-5">
           <h3
             className="text-white font-bold text-xl leading-tight"
@@ -82,10 +82,8 @@ function TeamCard({ name, role, image }: (typeof members)[0]) {
         </div>
       </div>
 
-      {/* Share button + popup — flex-col-reverse keeps button & popup in ONE continuous hover zone (no gap) */}
+      {/* Share button + popup — flex-col-reverse keeps button & popup in ONE continuous hover zone */}
       <div className="absolute bottom-5 right-5 z-20 group/share flex flex-col-reverse items-end">
-
-        {/* Share trigger button — visually at bottom due to flex-col-reverse */}
         <button
           className="w-10 h-10 rounded-full bg-primary-light flex items-center justify-center shadow-lg group-hover/share:bg-primary transition-colors duration-200"
           aria-label="Share"
@@ -93,27 +91,11 @@ function TeamCard({ name, role, image }: (typeof members)[0]) {
           <Share2 size={16} className="text-heading group-hover/share:text-white transition-colors duration-200" />
         </button>
 
-        {/* Popup — sits directly above the button (flex-col-reverse), no gap */}
         <div
-          className="mb-2 overflow-hidden max-h-0 opacity-0 group-hover/share:max-h-43 group-hover/share:opacity-100"
+          className="mb-2 overflow-hidden max-h-0 opacity-0 group-hover/share:max-h-36 group-hover/share:opacity-100"
           style={{ transition: "max-height 400ms cubic-bezier(0.16,1,0.3,1), opacity 250ms ease-out" }}
         >
           <div className="flex flex-col items-end gap-2 pb-1">
-
-            {/* Behance — circle, label expands left on hover */}
-            <a href="#" aria-label="Behance" className="group/behance flex items-center justify-end">
-              <span
-                className="inline-block overflow-hidden max-w-0 opacity-0 whitespace-nowrap group-hover/behance:max-w-20 group-hover/behance:opacity-100 group-hover/behance:mr-2 text-xs font-semibold text-heading bg-white px-2.5 py-1 rounded-full shadow-sm"
-                style={{ fontFamily: "var(--font-dm)", transition: "max-width 280ms cubic-bezier(0.4,0,0.2,1), opacity 200ms ease-out, margin 280ms cubic-bezier(0.4,0,0.2,1)" }}
-              >
-                Behance
-              </span>
-              <div className="w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center text-heading group-hover/behance:bg-primary group-hover/behance:text-white transition-colors duration-200 shrink-0">
-                <span className="font-black text-sm leading-none" style={{ fontFamily: "var(--font-jakarta)" }}>Bē</span>
-              </div>
-            </a>
-
-            {/* Social icon circles — label expands left on hover */}
             {socials.map(({ label, href, icon }) => (
               <a
                 key={label}
@@ -150,15 +132,14 @@ export default function Team() {
     <section id="team" className="py-24 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header — 2 column */}
         <div className="grid lg:grid-cols-2 gap-8 items-end mb-12">
           <div>
-            <SectionLabel text="Our Partners" />
+            <SectionLabel text="Team Members" />
             <h2
               className="text-3xl sm:text-4xl font-extrabold text-heading mt-5 leading-tight"
               style={{ fontFamily: "var(--font-jakarta)" }}
             >
-              The experienced partners behind S R S P &amp; Co.
+              Introducing our team of skilled financial advisors
             </h2>
           </div>
           <p
@@ -171,9 +152,7 @@ export default function Team() {
           </p>
         </div>
 
-        {/* Slider — outer div holds arrows (overflow-visible), inner div clips 4th card */}
         <div className="relative">
-          {/* Clip div: hides the 4th peeking card without clipping the nav arrows */}
           <div className="overflow-hidden">
             <div
               className={`flex gap-6 transition-transform duration-500 ease-in-out ${members.length < 3 ? "justify-center" : ""}`}
@@ -185,7 +164,6 @@ export default function Team() {
             </div>
           </div>
 
-          {/* Prev arrow */}
           <button
             onClick={prev}
             className="absolute -left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-primary border border-primary shadow-md flex items-center justify-center text-white hover:bg-[#174f41] transition-all duration-200 z-10"
@@ -193,7 +171,6 @@ export default function Team() {
             <ChevronLeft size={18} />
           </button>
 
-          {/* Next arrow */}
           <button
             onClick={next}
             className="absolute -right-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-primary border border-primary shadow-md flex items-center justify-center text-white hover:bg-[#174f41] transition-all duration-200 z-10"
@@ -202,18 +179,19 @@ export default function Team() {
           </button>
         </div>
 
-        {/* Dot indicators */}
-        <div className="flex items-center justify-center gap-2 mt-8">
-          {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`rounded-full transition-all duration-300 ${
-                i === current ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-primary-light"
-              }`}
-            />
-          ))}
-        </div>
+        {maxIndex > 0 && (
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === current ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-primary-light"
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

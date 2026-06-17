@@ -1,20 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#services" },
+  { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Case Study", href: "/#case-studies" },
-  { label: "Blog", href: "/#blog" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
@@ -42,12 +47,16 @@ export default function Header() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="flex items-center gap-1 px-4 py-2 text-base font-medium text-body hover:text-primary rounded-lg hover:bg-primary-light/20 transition-all duration-200"
+                className={`relative flex items-center gap-1 px-4 py-2 text-base font-medium rounded-lg transition-all duration-200 ${
+                  isActive(link.href)
+                    ? "text-primary bg-primary-light/30 font-semibold"
+                    : "text-body hover:text-primary hover:bg-primary-light/20"
+                }`}
                 style={{ fontFamily: "var(--font-dm)" }}
               >
                 {link.label}
-                {link.label === "Services" && (
-                  <ChevronDown size={14} className="opacity-60" />
+                {isActive(link.href) && (
+                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-primary" />
                 )}
               </Link>
             ))}
@@ -55,9 +64,11 @@ export default function Header() {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <Button variant="primary" size="sm">
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button variant="primary" size="sm">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile toggle */}
@@ -78,16 +89,22 @@ export default function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="block px-4 py-3 text-sm font-medium text-body hover:text-primary rounded-lg hover:bg-primary-light/20 transition-all"
+              className={`block px-4 py-3 text-sm font-medium rounded-lg transition-all ${
+                isActive(link.href)
+                  ? "text-primary bg-primary-light/30 font-semibold"
+                  : "text-body hover:text-primary hover:bg-primary-light/20"
+              }`}
               style={{ fontFamily: "var(--font-dm)" }}
             >
               {link.label}
             </Link>
           ))}
           <div className="mt-2 px-4">
-            <Button variant="primary" size="sm" className="w-full justify-center">
-              Get Started
-            </Button>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+              <Button variant="primary" size="sm" className="w-full justify-center">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       )}
