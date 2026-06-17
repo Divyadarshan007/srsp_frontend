@@ -19,9 +19,9 @@ export default function AboutPage() {
       <main>
         <AboutBanner />
         <About />
+        <AboutTeam />
         <AboutStrategic />
         <AboutStats />
-        <AboutTeam />
       </main>
       <Footer />
     </>

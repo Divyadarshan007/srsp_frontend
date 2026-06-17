@@ -23,7 +23,7 @@ const cards = [
 
 export default function StrategicPlanning() {
   return (
-    <section className="py-24 bg-[#F8FFFE]">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left — text content */}
@@ -87,7 +87,7 @@ function PlanCard({
   index: number;
 }) {
   return (
-    <div className="group flex items-start gap-5 p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary-light hover:shadow-lg hover:shadow-primary-light/20 transition-all duration-300">
+    <div className="group flex items-start gap-5 p-6 bg-white rounded-2xl border  border-primary-light hover:shadow-lg shadow-primary-light/20 transition-all duration-300">
       {/* Step number */}
       <div className="shrink-0 flex flex-col items-center gap-2">
         <div className="w-12 h-12 rounded-xl bg-primary-light/30 group-hover:bg-primary flex items-center justify-center transition-colors duration-300">

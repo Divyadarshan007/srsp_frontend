@@ -19,9 +19,9 @@ export default function ServicesPage() {
       <main>
         <ServicesBanner />
         <ServicesDetail />
-        <ServicesMarquee />
         <StrategicPlanning />
         <Testimonials />
+        <ServicesMarquee />
       </main>
       <Footer />
     </>
