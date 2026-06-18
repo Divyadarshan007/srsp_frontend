@@ -70,6 +70,18 @@ html {
   animation: marquee 22s linear infinite;
 }
 
+/* Services section gradient — desktop only */
+.services-bg {
+  background-image: none;
+}
+@media (min-width: 1024px) {
+  .services-bg {
+    background-image:
+      radial-gradient(at top right, #c7f4aa 0%, #FFFFFF 30%),
+      radial-gradient(at bottom left, #c7f4aa 0%, #FFFFFF 30%);
+  }
+}
+
 /* Marquee outlined word — border matches fill color, hover fills it */
 .marquee-outlined {
   position: relative;

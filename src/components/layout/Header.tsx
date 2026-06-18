@@ -66,7 +66,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link href="/contact">
               <Button variant="primary" size="sm">
-                Get Started
+                Login
               </Button>
             </Link>
           </div>
@@ -102,7 +102,7 @@ export default function Header() {
           <div className="mt-2 px-4">
             <Link href="/contact" onClick={() => setMenuOpen(false)}>
               <Button variant="primary" size="sm" className="w-full justify-center">
-                Get Started
+                Login
               </Button>
             </Link>
           </div>

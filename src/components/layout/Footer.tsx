@@ -1,8 +1,4 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 const footerColumns = [
   {
@@ -32,57 +28,9 @@ const footerColumns = [
 ];
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setEmail("");
-  };
-
   return (
     <footer className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-
-        {/* CTA Row */}
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          <div>
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight"
-              style={{ fontFamily: "var(--font-jakarta)" }}
-            >
-              Get the support you need,<br />when you need it
-            </h2>
-          </div>
-
-          <div className="lg:pt-1">
-            <p
-              className="text-white text-sm font-medium mb-3"
-              style={{ fontFamily: "var(--font-dm)" }}
-            >
-              Sign up for our Newsletter
-            </p>
-            <form onSubmit={handleSubmit} className="relative flex items-center">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                required
-                className="w-full px-5 py-4 rounded-lg bg-white text-heading placeholder-gray-400 text-sm focus:outline-none"
-                style={{ fontFamily: "var(--font-dm)" }}
-              />
-              <button
-                type="submit"
-                className="absolute right-2 w-9 h-9 rounded-full bg-heading flex items-center justify-center hover:opacity-80 transition-opacity duration-200 shrink-0"
-              >
-                <ArrowUpRight size={16} className="text-white" />
-              </button>
-            </form>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-white/25 mt-12 mb-12" />
 
         {/* Footer Link Columns */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-10">

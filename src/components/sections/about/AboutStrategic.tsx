@@ -26,7 +26,7 @@ function MiniChart() {
 
 export default function AboutStrategic() {
   return (
-    <section className="py-24 bg-[#FAFAF8] overflow-hidden">
+    <section className="py-12 lg:py-24 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
 
@@ -75,11 +75,11 @@ export default function AboutStrategic() {
             </div>
           </div>
 
-          {/* Right — image + stat cards (2-col inner grid) */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Right — image + stat cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
             {/* Left inner: image with play button */}
-            <div className="relative rounded-2xl overflow-hidden" style={{ height: "420px" }}>
+            <div className="relative rounded-2xl overflow-hidden h-64 sm:h-105">
               <img
                 src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&q=80"
                 alt="Financial advisor presenting"

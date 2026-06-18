@@ -23,7 +23,7 @@ const stats = [
 export default function AboutStats() {
   return (
     <>
-      <section className="py-20 bg-white">
+      <section className="py-10 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
 
@@ -48,7 +48,7 @@ export default function AboutStats() {
             </div>
 
             {/* Right — 3 stat columns */}
-            <div className="grid grid-cols-3 gap-6 lg:pt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:pt-12">
               {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-2">
                   <p

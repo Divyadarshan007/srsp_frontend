@@ -35,11 +35,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden min-h-[90px] flex items-stretch"
-      style={{
-        backgroundImage:
-          "radial-gradient(at top right, #c7f4aa 0%, #FFFFFF 30%), radial-gradient(at bottom left, #c7f4aa 0%, #FFFFFF 30%)"
-      }}
+      className="services-bg relative overflow-hidden min-h-[90px] flex items-stretch"
     >
       {/* LEFT column — svg + decorative overlays */}
       <div
@@ -82,7 +78,7 @@ export default function Services() {
       </div>
 
       {/* RIGHT column — content */}
-      <div className="flex-1 flex items-start pt-20 pb-8 px-6 lg:px-12">
+      <div className="flex-1 flex items-start pt-12 pb-8 lg:pt-20 px-6 lg:px-12">
         <div className="w-full">
           <SectionLabel text="Our Services" />
 
@@ -144,24 +140,10 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Pagination dots — far right edge */}
-      <div className="absolute right-5 top-1/2 -translate-y-1/2 flex flex-col gap-2 z-10">
-        {[0, 1, 2].map((i) => (
-          <span
-            key={i}
-            className={`block rounded-full ${
-              i === 1
-                ? "w-2.5 h-7 bg-primary"
-                : "w-2.5 h-2.5 bg-primary-light"
-            }`}
-          />
-        ))}
-      </div>
-
       {/* Scroll-to-top button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="absolute bottom-8 right-8 w-11 h-11 rounded-full border border-gray-300 bg-white/80 backdrop-blur-sm shadow flex items-center justify-center text-heading hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 z-10"
+        className="fixed bottom-8 right-8 w-11 h-11 rounded-full border border-gray-300 bg-white/80 backdrop-blur-sm shadow flex items-center justify-center text-heading hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 z-50"
         aria-label="Scroll to top"
       >
         <ArrowUp size={16} />

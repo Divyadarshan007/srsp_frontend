@@ -7,7 +7,7 @@ const posts = blogPosts.slice(0, 3);
 
 export default function Blog() {
   return (
-    <section id="blog" className="py-24 bg-[#F8FFFE]">
+    <section id="blog" className="py-12 lg:py-24 bg-[#F8FFFE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-14">
           <div>

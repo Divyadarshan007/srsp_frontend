@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
 
@@ -112,11 +112,12 @@ function TestimonialCard({
   title,
   quote,
   image,
-}: (typeof testimonials)[0]) {
+  cardWidth,
+}: (typeof testimonials)[0] & { cardWidth: string }) {
   return (
     <div
-      className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col"
-      style={{ flex: "0 0 calc(33.333% - 16px)" }}
+      className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex flex-col shrink-0"
+      style={{ flex: `0 0 ${cardWidth}`, width: cardWidth }}
     >
       {/* Watermark quotation mark */}
       <span
@@ -182,13 +183,26 @@ function TestimonialCard({
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
-  const maxIndex = Math.max(0, testimonials.length - 3);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  useEffect(() => {
+    const update = () => {
+      setVisibleCount(window.innerWidth >= 1024 ? 3 : 1);
+      setCurrent(0);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const maxIndex = Math.max(0, testimonials.length - visibleCount);
+  const cardWidth = `calc(${100 / visibleCount}% - ${(visibleCount - 1) * 24 / visibleCount}px)`;
 
   const prev = () => setCurrent((p) => Math.max(0, p - 1));
   const next = () => setCurrent((p) => Math.min(maxIndex, p + 1));
 
   return (
-    <section id="testimonials" className="py-24 bg-[#F4F6F8]">
+    <section id="testimonials" className="py-12 lg:py-24 bg-[#F4F6F8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -215,17 +229,11 @@ export default function Testimonials() {
         <div className="relative">
           <div className="overflow-hidden">
             <div
-              className={`flex gap-6 transition-transform duration-500 ease-in-out ${
-                testimonials.length < 3 ? "justify-center" : ""
-              }`}
-              style={
-                testimonials.length >= 3
-                  ? { transform: `translateX(calc(-${current} * (100% / 3 + 8px)))` }
-                  : undefined
-              }
+              className="flex gap-6 transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(calc(-${current} * (${100 / visibleCount}% + ${24 / visibleCount}px)))` }}
             >
               {testimonials.map((t) => (
-                <TestimonialCard key={t.name} {...t} />
+                <TestimonialCard key={t.name} {...t} cardWidth={cardWidth} />
               ))}
             </div>
           </div>

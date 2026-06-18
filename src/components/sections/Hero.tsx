@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 
@@ -18,8 +19,8 @@ export default function Hero() {
       />
       <div className="absolute inset-0 bg-linear-to-r from-heading/96 via-heading/85 to-heading/50" />
 
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute bottom-1/3 left-1/3 w-48 h-48 rounded-full bg-primary-light/10 blur-3xl" />
+      <div className="absolute top-1/4 right-1/4 w-32 h-32 sm:w-64 sm:h-64 rounded-full bg-primary/20 blur-3xl" />
+      <div className="absolute bottom-1/3 left-1/3 w-24 h-24 sm:w-48 sm:h-48 rounded-full bg-primary-light/10 blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -43,14 +44,16 @@ export default function Hero() {
               to help your business thrive with clarity and long-term strategy.
             </p>
 
-            <div className="flex flex-wrap gap-4">
-              <Button variant="light" size="lg">
-                Discover More
-                <ArrowRight size={18} />
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/about">
+                <Button variant="light" size="lg" className="w-full sm:w-auto">
+                  Discover More
+                  <ArrowRight size={18} />
+                </Button>
+              </Link>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 font-semibold rounded-full px-9 py-4 text-base border-2 border-white/30 text-white hover:bg-white hover:text-heading transition-all duration-300 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 font-semibold rounded-full px-9 py-4 text-base border-2 border-white/30 text-white hover:bg-white hover:text-heading transition-all duration-300 cursor-pointer w-full sm:w-auto"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
                 Our Services
@@ -58,17 +61,17 @@ export default function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-8 mt-14 pt-8 border-t border-white/10">
+            <div className="flex items-center gap-4 sm:gap-8 mt-10 sm:mt-14 pt-8 border-t border-white/10">
               {[
                 { value: "2,000+", label: "Satisfied Clients" },
                 { value: "25+", label: "Years Experience" },
                 { value: "50+", label: "Top Companies" },
               ].map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-8">
-                  {i > 0 && <div className="w-px h-10 bg-white/15" />}
+                <div key={stat.label} className="flex items-center gap-4 sm:gap-8">
+                  {i > 0 && <div className="w-px h-8 sm:h-10 bg-white/15" />}
                   <div>
                     <p
-                      className="text-3xl font-extrabold text-white"
+                      className="text-xl sm:text-3xl font-extrabold text-white"
                       style={{ fontFamily: "var(--font-jakarta)" }}
                     >
                       {stat.value}
@@ -89,11 +92,10 @@ export default function Hero() {
           <div className="hidden lg:flex justify-end">
             <div className="relative">
               <div className="w-105 h-125 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                {/* Confident businesswoman — finance context */}
                 <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=840&q=80"
-                  alt="Financial advisor"
-                  className="w-full h-full object-cover object-top"
+                  src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8"
+                  alt="Financial planning with documents and charts"
+                  className="w-full h-full object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-heading/40 to-transparent" />
               </div>

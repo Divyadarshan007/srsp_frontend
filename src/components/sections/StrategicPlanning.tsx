@@ -1,7 +1,5 @@
 import { BarChart3, Target, Zap } from "lucide-react";
 import SectionLabel from "@/components/ui/SectionLabel";
-import Button from "@/components/ui/Button";
-import { ArrowRight } from "lucide-react";
 
 const cards = [
   {
@@ -23,7 +21,7 @@ const cards = [
 
 export default function StrategicPlanning() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-8 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left — text content */}
@@ -43,24 +41,6 @@ export default function StrategicPlanning() {
               build sustainable business models that adapt to evolving markets
               and deliver measurable results over the long term.
             </p>
-            <Button variant="primary" size="md">
-              Read More
-              <ArrowRight size={16} />
-            </Button>
-
-            {/* Pagination dots */}
-            <div className="flex items-center gap-2 mt-10">
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  className={`rounded-full transition-all duration-300 ${
-                    i === 0
-                      ? "w-8 h-2.5 bg-primary"
-                      : "w-2.5 h-2.5 bg-primary-light"
-                  }`}
-                />
-              ))}
-            </div>
           </div>
 
           {/* Right — 3 horizontal cards stacked vertically matching reference */}
