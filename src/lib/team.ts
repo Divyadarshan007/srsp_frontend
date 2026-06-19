@@ -49,10 +49,11 @@ export const teamMembers: TeamMember[] = [
     image: "/team/JIYA.png",
   },
   {
-    name: "Rutvi",
-    role: "",
-    cardQual: "",
-    fullQual: "",
+    name: "Rutvi", 
+ 
+    role: "Support Service Staff",
+    cardQual: "BCA (Running)",
+    fullQual: "BCA (Running)",
     bio: "Rutvi joined the firm in April 2025 and manages the firm's clerical and administrative operations. She handles day-to-day office work, documentation, record management, and client follow-ups, ensuring smooth and efficient office functioning. Her organized approach, reliability, and attention to detail make her a valuable member of the team.",
     image: "/team/RUTVI.png",
   },

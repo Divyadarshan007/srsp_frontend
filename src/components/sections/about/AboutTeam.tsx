@@ -69,18 +69,28 @@ export default function AboutTeam() {
 
                 {/* Content */}
                 <div className="flex flex-col gap-5 flex-1 lg:pt-4">
-                  <h3
-                    className="text-3xl sm:text-4xl font-extrabold text-heading leading-tight"
-                    style={{ fontFamily: "var(--font-jakarta)" }}
-                  >
-                    {member.name}
-                  </h3>
-                  <p
-                    className="text-primary font-semibold text-sm"
-                    style={{ fontFamily: "var(--font-dm)" }}
-                  >
-                    {member.fullQual}
-                  </p>
+                  <div className="flex flex-col gap-1">
+                    <h3
+                      className="text-3xl sm:text-4xl font-extrabold text-heading leading-tight"
+                      style={{ fontFamily: "var(--font-jakarta)" }}
+                    >
+                      {member.name}
+                    </h3>
+                    {member.role && (
+                      <p
+                        className="text-body font-medium text-base"
+                        style={{ fontFamily: "var(--font-dm)" }}
+                      >
+                        {member.role}
+                      </p>
+                    )}
+                    <p
+                      className="text-primary font-semibold text-sm"
+                      style={{ fontFamily: "var(--font-dm)" }}
+                    >
+                      {member.fullQual}
+                    </p>
+                  </div>
                   <p
                     className="text-body leading-relaxed"
                     style={{ fontFamily: "var(--font-dm)" }}
