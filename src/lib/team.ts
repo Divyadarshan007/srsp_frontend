@@ -50,7 +50,6 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: "Rutvi", 
- 
     role: "Support Service Staff",
     cardQual: "BCA (Running)",
     fullQual: "BCA (Running)",

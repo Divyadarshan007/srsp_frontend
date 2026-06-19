@@ -12,29 +12,21 @@ export default function About() {
     <section className="py-6 lg:py-24 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 lg:space-y-24">
 
+        {/* Section header */}
+        <div className="lg:pb-20 pb-0 lg:mb-0">
+          <SectionLabel text="Our Partners" />
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading mt-5 leading-tight max-w-2xl"
+            style={{ fontFamily: "var(--font-jakarta)" }}
+          >
+            Meet the brain behind<br />SRSP &amp; Co.
+          </h2>
+        </div>
+
         {/* Row 1 — CA. Savan M. Patel */}
         <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-x-16 gap-y-6 items-start">
 
-          {/* 1. Header — mobile: first, desktop: col 2 row 1 */}
-          <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1 lg:pt-4">
-            <SectionLabel text="About The Company" />
-            <div className="flex flex-col gap-1">
-              <h2
-                className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-heading leading-tight"
-                style={{ fontFamily: "var(--font-jakarta)" }}
-              >
-                CA. Savan M. Patel
-              </h2>
-              <p className="text-base font-semibold text-primary" style={{ fontFamily: "var(--font-dm)" }}>
-                B.Com, FCA, DISA, CFA (Level I)
-              </p>
-              <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
-                Founding Partner
-              </p>
-            </div>
-          </div>
-
-          {/* 2. Image — mobile: second, desktop: col 1 rows 1-2 */}
+          {/* 1. Image — mobile: first, desktop: col 1 rows 1-2 */}
           <div className="relative lg:col-start-1 lg:row-start-1 lg:row-span-2">
             <svg
               className="absolute -top-10 -left-10 w-36 h-36 text-primary-light opacity-60 -z-10"
@@ -50,13 +42,29 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden aspect-square w-full max-w-70 shadow-2xl">
+            <div className="rounded-3xl overflow-hidden aspect-square w-full lg:max-w-70 shadow-2xl">
               <img
                 src="/founders/savan.jpeg"
                 alt="CA. Savan M. Patel"
                 className="w-full h-full object-cover object-top"
               />
             </div>
+          </div>
+
+          {/* 2. Header — mobile: second, desktop: col 2 row 1 */}
+          <div className="flex flex-col gap-1 lg:col-start-2 lg:row-start-1 lg:pt-4">
+            <h2
+              className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-heading leading-tight"
+              style={{ fontFamily: "var(--font-jakarta)" }}
+            >
+              CA. Savan M. Patel
+            </h2>
+            <p className="text-base font-semibold text-primary" style={{ fontFamily: "var(--font-dm)" }}>
+              B.Com, FCA, DISA, CFA (Level I)
+            </p>
+            <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
+              Founding Partner
+            </p>
           </div>
 
           {/* 3. Body — mobile: third, desktop: col 2 row 2 */}
@@ -106,25 +114,7 @@ export default function About() {
         {/* Row 2 — CA. CS. Raj Shah */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-x-16 gap-y-6 items-start">
 
-          {/* 1. Header — mobile: first, desktop: col 1 row 1 */}
-          <div className="flex flex-col gap-4 lg:col-start-1 lg:row-start-1 lg:pt-4">
-            <div className="flex flex-col gap-1">
-              <h2
-                className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-heading leading-tight"
-                style={{ fontFamily: "var(--font-jakarta)" }}
-              >
-                CA. CS. Raj Shah
-              </h2>
-              <p className="text-base font-semibold text-primary" style={{ fontFamily: "var(--font-dm)" }}>
-                FCA, ACS, DISA
-              </p>
-              <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
-                Co-Founding Partner
-              </p>
-            </div>
-          </div>
-
-          {/* 2. Image — mobile: second, desktop: col 2 rows 1-2 */}
+          {/* 1. Image — mobile: first, desktop: col 2 rows 1-2 */}
           <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2">
             <svg
               className="absolute -top-10 -right-10 w-36 h-36 text-primary-light opacity-60 -z-10"
@@ -140,13 +130,29 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden aspect-square w-full max-w-70 shadow-2xl">
+            <div className="rounded-3xl overflow-hidden aspect-square w-full lg:max-w-70 shadow-2xl">
               <img
                 src="/founders/raj.jpeg"
                 alt="CA. CS. Raj Shah"
                 className="w-full h-full object-cover object-top"
               />
             </div>
+          </div>
+
+          {/* 2. Header — mobile: second, desktop: col 1 row 1 */}
+          <div className="flex flex-col gap-1 lg:col-start-1 lg:row-start-1 lg:pt-4">
+            <h2
+              className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-heading leading-tight"
+              style={{ fontFamily: "var(--font-jakarta)" }}
+            >
+              CA. CS. Raj Shah
+            </h2>
+            <p className="text-base font-semibold text-primary" style={{ fontFamily: "var(--font-dm)" }}>
+              FCA, ACS, DISA
+            </p>
+            <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
+              Co-Founding Partner
+            </p>
           </div>
 
           {/* 3. Body — mobile: third, desktop: col 1 row 2 */}
