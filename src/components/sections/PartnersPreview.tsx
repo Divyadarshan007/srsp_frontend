@@ -19,10 +19,29 @@ const partners = [
 
 export default function PartnersPreview() {
   return (
-    <section className="py-12 lg:py-24 bg-[#FAFAF8]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-[#FAFAF8] flex items-stretch">
 
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
+      {/* Left decorative column — same treatment as Services section */}
+      <div
+        className="relative shrink-0 hidden lg:flex flex-col pointer-events-none select-none"
+        style={{
+          width: "32vw",
+          backgroundImage: "radial-gradient(at bottom left, #c7f4aa 0%, #FAFAF8 30%)",
+        }}
+      >
+        <img
+          src="/images/logo-w.svg"
+          alt=""
+          aria-hidden
+          style={{ width: "30vw", opacity: 0.1 }}
+          className="h-full object-contain object-left"
+        />
+      </div>
+
+      <div className="flex-1 py-8 lg:py-12 px-4 sm:px-6 lg:px-12">
+      <div className="max-w-5xl">
+
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
           <div>
             <SectionLabel text="Our Partners" />
             <h2
@@ -41,7 +60,7 @@ export default function PartnersPreview() {
           </Link>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {partners.map((partner) => (
             <div key={partner.name} className="flex flex-col gap-4">
               <div className="rounded-2xl overflow-hidden aspect-[3/4] w-full shadow-lg">
@@ -75,6 +94,7 @@ export default function PartnersPreview() {
           ))}
         </div>
 
+      </div>
       </div>
     </section>
   );
