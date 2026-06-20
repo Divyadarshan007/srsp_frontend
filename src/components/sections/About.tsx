@@ -8,10 +8,16 @@ export default function About() {
         {/* Section header */}
         <div className="lg:pb-20 pb-0 lg:mb-0">
           <SectionLabel text="Our Partners" />
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading mt-5 leading-tight"
+            style={{ fontFamily: "var(--font-jakarta)" }}
+          >
+            Meet Our Partners
+          </h2>
         </div>
 
         {/* Row 1 — CA. Savan M. Patel */}
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-x-16 gap-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-x-16 gap-y-6">
 
           {/* Image — mobile: first, desktop: col 1 rows 1-2 */}
           <div className="relative lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-stretch">
@@ -29,7 +35,7 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:aspect-auto lg:w-70 lg:h-full shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full  aspect-280/374 lg:aspect-auto lg:h-full shadow-2xl">
               <img
                 src="/founders/savan.jpeg"
                 alt="CA. Savan M. Patel"
@@ -85,7 +91,7 @@ export default function About() {
         </div>
 
         {/* Row 2 — CA. CS. Raj Shah */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-x-16 gap-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-x-16 gap-y-6">
 
           {/* Image — mobile: first, desktop: col 2 rows 1-2 */}
           <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-stretch">
@@ -103,7 +109,7 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:aspect-auto lg:w-70 lg:h-full shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:aspect-auto lg:h-full shadow-2xl">
               <img
                 src="/founders/raj.jpeg"
                 alt="CA. CS. Raj Shah"

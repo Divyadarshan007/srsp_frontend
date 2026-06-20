@@ -10,7 +10,7 @@ export default function AboutStory() {
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading mt-5 mb-8 leading-tight"
             style={{ fontFamily: "var(--font-jakarta)" }}
           >
-            About S R S P &amp; Co.
+            About Us.
           </h2>
           <div className="space-y-5 text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
             <p>
