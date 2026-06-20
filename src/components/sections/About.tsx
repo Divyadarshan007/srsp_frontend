@@ -42,7 +42,7 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden aspect-square w-full lg:max-w-70 shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:w-70 lg:h-93.5 shadow-2xl">
               <img
                 src="/founders/savan.jpeg"
                 alt="CA. Savan M. Patel"
@@ -130,7 +130,7 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden aspect-square w-full lg:max-w-70 shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:w-70 lg:h-93.5 shadow-2xl">
               <img
                 src="/founders/raj.jpeg"
                 alt="CA. CS. Raj Shah"
