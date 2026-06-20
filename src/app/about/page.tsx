@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AboutBanner from "@/components/sections/about/AboutBanner";
 import About from "@/components/sections/About";
+import AboutStory from "@/components/sections/about/AboutStory";
 import AboutStrategic from "@/components/sections/about/AboutStrategic";
 import AboutStats from "@/components/sections/about/AboutStats";
 import AboutTeam from "@/components/sections/about/AboutTeam";
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <Header />
       <main>
         <AboutBanner />
+        <AboutStory />
         <About />
         <AboutTeam />
         <AboutStrategic />

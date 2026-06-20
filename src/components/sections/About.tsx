@@ -1,13 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function About() {
-  const [savanExpanded, setSavanExpanded] = useState(false);
-  const [rajExpanded, setRajExpanded] = useState(false);
-
   return (
     <section className="py-6 lg:py-24 bg-[#FAFAF8] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 lg:space-y-24">
@@ -15,19 +8,13 @@ export default function About() {
         {/* Section header */}
         <div className="lg:pb-20 pb-0 lg:mb-0">
           <SectionLabel text="Our Partners" />
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading mt-5 leading-tight max-w-2xl"
-            style={{ fontFamily: "var(--font-jakarta)" }}
-          >
-            Meet the brain behind<br />SRSP &amp; Co.
-          </h2>
         </div>
 
         {/* Row 1 — CA. Savan M. Patel */}
-        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-x-16 gap-y-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-x-16 gap-y-6">
 
-          {/* 1. Image — mobile: first, desktop: col 1 rows 1-2 */}
-          <div className="relative lg:col-start-1 lg:row-start-1 lg:row-span-2">
+          {/* Image — mobile: first, desktop: col 1 rows 1-2 */}
+          <div className="relative lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:self-stretch">
             <svg
               className="absolute -top-10 -left-10 w-36 h-36 text-primary-light opacity-60 -z-10"
               viewBox="0 0 120 120"
@@ -42,7 +29,7 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:w-70 lg:h-93.5 shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:aspect-auto lg:w-70 lg:h-full shadow-2xl">
               <img
                 src="/founders/savan.jpeg"
                 alt="CA. Savan M. Patel"
@@ -51,7 +38,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* 2. Header — mobile: second, desktop: col 2 row 1 */}
+          {/* Header — mobile: second, desktop: col 2 row 1 */}
           <div className="flex flex-col gap-1 lg:col-start-2 lg:row-start-1 lg:pt-4">
             <h2
               className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-heading leading-tight"
@@ -65,9 +52,12 @@ export default function About() {
             <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
               Founding Partner
             </p>
+            <p className="text-body text-sm" style={{ fontFamily: "var(--font-dm)" }}>
+              ICAI Membership No.: [SAVAN_ICAI_NO]
+            </p>
           </div>
 
-          {/* 3. Body — mobile: third, desktop: col 2 row 2 */}
+          {/* Body — mobile: third, desktop: col 2 row 2 */}
           <div className="flex flex-col gap-6 lg:col-start-2 lg:row-start-2">
             <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
               CA. Savan M. Patel is the founding partner of the firm and brings
@@ -77,45 +67,28 @@ export default function About() {
               industries, helping them achieve sustainable growth and regulatory
               compliance.
             </p>
-
-            {savanExpanded && (
-              <>
-                <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
-                  He actively oversees Income Tax compliance, tax planning, assessments,
-                  appeals, and advisory assignments for corporate and non-corporate
-                  clients. His expertise in project financing enables businesses to
-                  secure funding, prepare detailed project reports, and navigate complex
-                  financial requirements with confidence.
-                </p>
-                <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
-                  Apart from his professional practice, he has played a pivotal role in
-                  the firm&apos;s digital transformation initiatives. By leveraging
-                  technology and automation, he has successfully implemented various
-                  office automation systems, enhancing operational efficiency, data
-                  accuracy, and client service delivery.
-                </p>
-              </>
-            )}
-
-            <button
-              onClick={() => setSavanExpanded((prev) => !prev)}
-              className="flex items-center gap-2 text-primary font-semibold text-sm w-fit hover:text-[#174f41] transition-colors duration-300 cursor-pointer"
-              style={{ fontFamily: "var(--font-dm)" }}
-            >
-              {savanExpanded ? (
-                <>Read Less <ChevronUp size={16} /></>
-              ) : (
-                <>Read More <ChevronDown size={16} /></>
-              )}
-            </button>
+            <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
+              He actively oversees Income Tax compliance, tax planning, assessments,
+              appeals, and advisory assignments for corporate and non-corporate
+              clients. His expertise in project financing enables businesses to
+              secure funding, prepare detailed project reports, and navigate complex
+              financial requirements with confidence.
+            </p>
+            <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
+              Apart from his professional practice, he has played a pivotal role in
+              the firm&apos;s digital transformation initiatives. By leveraging
+              technology and automation, he has successfully implemented various
+              office automation systems, enhancing operational efficiency, data
+              accuracy, and client service delivery.
+            </p>
           </div>
         </div>
 
         {/* Row 2 — CA. CS. Raj Shah */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-x-16 gap-y-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-x-16 gap-y-6">
 
-          {/* 1. Image — mobile: first, desktop: col 2 rows 1-2 */}
-          <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2">
+          {/* Image — mobile: first, desktop: col 2 rows 1-2 */}
+          <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2 lg:self-stretch">
             <svg
               className="absolute -top-10 -right-10 w-36 h-36 text-primary-light opacity-60 -z-10"
               viewBox="0 0 120 120"
@@ -130,7 +103,7 @@ export default function About() {
                 strokeDasharray="8 6"
               />
             </svg>
-            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:w-70 lg:h-93.5 shadow-2xl">
+            <div className="rounded-3xl overflow-hidden w-full aspect-280/374 lg:aspect-auto lg:w-70 lg:h-full shadow-2xl">
               <img
                 src="/founders/raj.jpeg"
                 alt="CA. CS. Raj Shah"
@@ -139,7 +112,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* 2. Header — mobile: second, desktop: col 1 row 1 */}
+          {/* Header — mobile: second, desktop: col 1 row 1 */}
           <div className="flex flex-col gap-1 lg:col-start-1 lg:row-start-1 lg:pt-4">
             <h2
               className="text-3xl sm:text-4xl lg:text-4xl font-extrabold text-heading leading-tight"
@@ -153,9 +126,12 @@ export default function About() {
             <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
               Co-Founding Partner
             </p>
+            <p className="text-body text-sm" style={{ fontFamily: "var(--font-dm)" }}>
+              ICAI Membership No.: [RAJ_ICAI_NO]
+            </p>
           </div>
 
-          {/* 3. Body — mobile: third, desktop: col 1 row 2 */}
+          {/* Body — mobile: third, desktop: col 1 row 2 */}
           <div className="flex flex-col gap-6 lg:col-start-1 lg:row-start-2">
             <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
               CA. CS. Raj Shah is the co-founding partner of the firm and possesses
@@ -165,38 +141,21 @@ export default function About() {
               comprehensive solutions to businesses navigating complex regulatory and
               taxation frameworks.
             </p>
-
-            {rajExpanded && (
-              <>
-                <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
-                  He primarily oversees GST advisory and litigation matters, representing
-                  clients in assessments, audits, investigations, and appellate
-                  proceedings. His deep understanding of indirect tax laws enables
-                  clients to effectively manage compliance risks and resolve disputes
-                  with tax authorities.
-                </p>
-                <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
-                  In addition, he supervises Income Tax compliance engagements and
-                  project finance assignments, assisting businesses in maintaining
-                  robust financial and regulatory frameworks. His practical approach,
-                  technical expertise, and commitment to client success make him a
-                  trusted advisor to entrepreneurs, SMEs, and corporate organisations
-                  alike.
-                </p>
-              </>
-            )}
-
-            <button
-              onClick={() => setRajExpanded((prev) => !prev)}
-              className="flex items-center gap-2 text-primary font-semibold text-sm w-fit hover:text-[#174f41] transition-colors duration-300 cursor-pointer"
-              style={{ fontFamily: "var(--font-dm)" }}
-            >
-              {rajExpanded ? (
-                <>Read Less <ChevronUp size={16} /></>
-              ) : (
-                <>Read More <ChevronDown size={16} /></>
-              )}
-            </button>
+            <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
+              He primarily oversees GST advisory and litigation matters, representing
+              clients in assessments, audits, investigations, and appellate
+              proceedings. His deep understanding of indirect tax laws enables
+              clients to effectively manage compliance risks and resolve disputes
+              with tax authorities.
+            </p>
+            <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
+              In addition, he supervises Income Tax compliance engagements and
+              project finance assignments, assisting businesses in maintaining
+              robust financial and regulatory frameworks. His practical approach,
+              technical expertise, and commitment to client success make him a
+              trusted advisor to entrepreneurs, SMEs, and corporate organisations
+              alike.
+            </p>
           </div>
         </div>
 

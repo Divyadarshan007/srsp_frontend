@@ -5,7 +5,6 @@ import ServicesBanner from "@/components/sections/services/ServicesBanner";
 import ServicesDetail from "@/components/sections/services/ServicesDetail";
 import ServicesMarquee from "@/components/sections/services/ServicesMarquee";
 import StrategicPlanning from "@/components/sections/StrategicPlanning";
-import Testimonials from "@/components/sections/Testimonials";
 export const metadata: Metadata = {
   title: "Services — S R S P & Co",
   description:
@@ -20,7 +19,6 @@ export default function ServicesPage() {
         <ServicesBanner />
         <ServicesDetail />
         <StrategicPlanning />
-        <Testimonials />
         <ServicesMarquee />
       </main>
       <Footer />

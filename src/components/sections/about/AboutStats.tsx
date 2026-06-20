@@ -3,19 +3,19 @@ import Marquee from "@/components/ui/Marquee";
 
 const stats = [
   {
-    value: "130+",
-    label: "Financial advices",
-    desc: "Smart money management for your future",
+    value: "3",
+    label: "Core Practice Areas",
+    desc: "Tax & Litigation, Audit & Assurance, and Business Advisory",
   },
   {
-    value: "148+",
-    label: "Projection Analysis",
-    desc: "Future trends and financial growth insights",
+    value: "Est. 2020",
+    label: "Year Established",
+    desc: "Serving clients since our founding in Surat",
   },
   {
-    value: "95%",
-    label: "Business planning",
-    desc: "Strategic roadmap for business growth success",
+    value: "WIRC",
+    label: "ICAI Regional Member",
+    desc: "Member — Western India Regional Council, Surat Branch",
   },
 ];
 
@@ -34,16 +34,16 @@ export default function AboutStats() {
                 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading mt-5 mb-5 leading-tight"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
-                Helping companies attempt possibilities
+                Our Practice
               </h2>
               <p
                 className="text-body leading-relaxed"
                 style={{ fontFamily: "var(--font-dm)" }}
               >
-                Supporting companies in exploring new opportunities, overcoming
-                business challenges, and transforming ideas into actionable
-                strategies that drive innovation, improve performance, and
-                create lasting value.
+                S R S P &amp; Co. is an ICAI-registered chartered accountancy firm
+                based in Surat, providing professional services in taxation,
+                audit, and business advisory to individuals, SMEs, and
+                corporates across Gujarat.
               </p>
             </div>
 

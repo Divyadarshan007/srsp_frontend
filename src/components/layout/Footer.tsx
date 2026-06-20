@@ -21,7 +21,6 @@ const footerColumns = [
     links: [
       { label: "Finance Management", href: "/services" },
       { label: "Tax Planning Solutions", href: "/services" },
-      { label: "Credit Counseling", href: "/services" },
       { label: "Management Accounting", href: "/services" },
     ],
   },
@@ -32,8 +31,8 @@ export default function Footer() {
     <footer className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
 
-        {/* Footer Link Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-10">
+        {/* Top section: columns + firm info */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           {footerColumns.map((col) => (
             <div key={col.title}>
               <h4
@@ -57,22 +56,71 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+
+          {/* Firm registration column */}
+          <div>
+            <h4
+              className="text-white font-semibold text-sm mb-5"
+              style={{ fontFamily: "var(--font-jakarta)" }}
+            >
+              Firm Details
+            </h4>
+            <ul className="space-y-3">
+              <li
+                className="text-white/60 text-sm"
+                style={{ fontFamily: "var(--font-dm)" }}
+              >
+                Firm Reg. No.: 153921W
+              </li>
+              <li
+                className="text-white/60 text-sm"
+                style={{ fontFamily: "var(--font-dm)" }}
+              >
+                Member — WIRC of ICAI
+              </li>
+              <li
+                className="text-white/60 text-sm"
+                style={{ fontFamily: "var(--font-dm)" }}
+              >
+                Surat Branch
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Copyright Bar */}
-        <div className="border-t border-white/20 mt-12 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+        {/* Disclaimer */}
+        <div className="border-t border-white/20 mt-10 pt-6">
           <p
-            className="text-white/40 text-xs"
+            className="text-white/40 text-xs leading-relaxed mb-4"
             style={{ fontFamily: "var(--font-dm)" }}
           >
-            © 2025 S R S P &amp; Co. All rights reserved.
+            Content on this site is for informational purposes only and does not constitute professional advice.
+            An engagement letter is required before any professional services commence.
           </p>
-          <p
-            className="text-white/40 text-xs"
-            style={{ fontFamily: "var(--font-dm)" }}
-          >
-            Designed with care for financial excellence
-          </p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+            <p
+              className="text-white/40 text-xs"
+              style={{ fontFamily: "var(--font-dm)" }}
+            >
+              © 2025 S R S P &amp; Co. All rights reserved.
+            </p>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/privacy-policy"
+                className="text-white/40 text-xs hover:text-white/70 transition-colors duration-200"
+                style={{ fontFamily: "var(--font-dm)" }}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/disclaimer"
+                className="text-white/40 text-xs hover:text-white/70 transition-colors duration-200"
+                style={{ fontFamily: "var(--font-dm)" }}
+              >
+                Disclaimer
+              </Link>
+            </div>
+          </div>
         </div>
 
       </div>

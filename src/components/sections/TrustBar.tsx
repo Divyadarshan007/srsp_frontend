@@ -16,8 +16,8 @@ export default function TrustBar() {
             className="text-heading font-semibold text-sm shrink-0 whitespace-nowrap"
             style={{ fontFamily: "var(--font-jakarta)" }}
           >
-            Trusted by 50+{" "}
-            <span className="text-body font-normal">Top Companies</span>
+            Client{" "}
+            <span className="text-body font-normal">Industries We Serve</span>
           </p>
 
           <div className="w-px h-6 bg-gray-200 hidden sm:block shrink-0" />

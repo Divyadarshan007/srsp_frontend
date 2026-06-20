@@ -5,9 +5,9 @@ import About from "@/components/sections/About";
 import Services from "@/components/sections/Services";
 import StrategicPlanning from "@/components/sections/StrategicPlanning";
 import Team from "@/components/sections/Team";
-import Testimonials from "@/components/sections/Testimonials";
 import Consultation from "@/components/sections/Consultation";
 import Blog from "@/components/sections/Blog";
+import AboutStory from "@/components/sections/about/AboutStory";
 
 export default function Home() {
   return (
@@ -15,11 +15,11 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <AboutStory />
         <Services />
         <StrategicPlanning />
         <About />
         <Team />
-        <Testimonials />
         <Consultation />
         <Blog />
       </main>

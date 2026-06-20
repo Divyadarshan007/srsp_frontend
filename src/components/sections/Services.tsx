@@ -25,12 +25,6 @@ const features = [
   },
 ];
 
-const avatars = [
-  "/images/KapilSuare.png",
-  "/images/ajay.PNG",
-  "/images/nikunj.PNG",
-];
-
 export default function Services() {
   return (
     <section
@@ -53,28 +47,6 @@ export default function Services() {
           className="h-full object-contain object-left"
         />
 
-        {/* Customer avatar group */}
-        <div className="absolute top-10 left-8 z-10 pointer-events-auto">
-          <div className="flex items-center">
-            {avatars.map((src, i) => (
-              <div
-                key={i}
-                className={`w-10 h-10 rounded-full border-2 border-white overflow-hidden shrink-0${i > 0 ? " -ml-3" : ""}`}
-              >
-                <img src={src} alt="" className="w-full h-full object-cover" />
-              </div>
-            ))}
-            <div className="-ml-3 w-10 h-10 rounded-full border-2 border-white bg-primary-light flex items-center justify-center shrink-0">
-              <span className="text-xs font-bold text-primary">+1</span>
-            </div>
-          </div>
-          <p className="mt-2 text-sm font-bold text-heading" style={{ fontFamily: "var(--font-jakarta)" }}>
-            We have approx 20k+
-          </p>
-          <p className="text-xs font-semibold text-primary" style={{ fontFamily: "var(--font-dm)" }}>
-            Customers Wordwide
-          </p>
-        </div>
       </div>
 
       {/* RIGHT column — content */}

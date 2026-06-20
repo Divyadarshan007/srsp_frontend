@@ -60,32 +60,6 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Stats */}
-            <div className="flex items-center gap-4 sm:gap-8 mt-10 sm:mt-14 pt-8 border-t border-white/10">
-              {[
-                { value: "2,000+", label: "Satisfied Clients" },
-                { value: "25+", label: "Years Experience" },
-                { value: "50+", label: "Top Companies" },
-              ].map((stat, i) => (
-                <div key={stat.label} className="flex items-center gap-4 sm:gap-8">
-                  {i > 0 && <div className="w-px h-8 sm:h-10 bg-white/15" />}
-                  <div>
-                    <p
-                      className="text-xl sm:text-3xl font-extrabold text-white"
-                      style={{ fontFamily: "var(--font-jakarta)" }}
-                    >
-                      {stat.value}
-                    </p>
-                    <p
-                      className="text-white/50 text-xs mt-0.5"
-                      style={{ fontFamily: "var(--font-dm)" }}
-                    >
-                      {stat.label}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Right — real advisor photo */}
@@ -99,19 +73,19 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-heading/40 to-transparent" />
               </div>
-              {/* Floating stat card */}
+              {/* Floating info card */}
               <div className="absolute -bottom-4 -left-10 bg-white rounded-2xl px-5 py-4 shadow-2xl">
                 <p
                   className="text-heading font-bold text-sm"
                   style={{ fontFamily: "var(--font-jakarta)" }}
                 >
-                  Powering 50+ Top Companies
+                  S R S P &amp; Co.
                 </p>
                 <p
                   className="text-body text-xs mt-0.5"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
-                  Trusted worldwide
+                  Chartered Accountants
                 </p>
               </div>
               {/* Green accent ring */}

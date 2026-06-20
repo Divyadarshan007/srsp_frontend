@@ -93,19 +93,12 @@ export default function Consultation() {
           {/* Left */}
           <div>
             <SectionLabel text="Get In Touch" />
-            <h2
-              className="text-3xl sm:text-4xl font-extrabold text-heading mt-5 mb-4 leading-tight"
-              style={{ fontFamily: "var(--font-jakarta)" }}
-            >
-              Turning Challenges into Opportunities
-            </h2>
             <p
-              className="text-body leading-relaxed mb-8"
+              className="text-body leading-relaxed mb-8 mt-5"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              Ready to transform your financial situation? Our expert team is
-              here to provide tailored solutions and guide you toward sustainable
-              business growth.
+              Contact our office for queries regarding our professional services.
+              Our team will respond to your enquiry at the earliest.
             </p>
 
             <div className="space-y-4">
@@ -165,7 +158,7 @@ export default function Consultation() {
                 className="font-bold text-heading text-lg"
                 style={{ fontFamily: "var(--font-jakarta)" }}
               >
-                Free Consultation for Our Services
+                Send Us a Message
               </h3>
             </div>
 
