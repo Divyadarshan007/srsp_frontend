@@ -57,7 +57,7 @@ export default function About() {
             </p>
             <p className="text-body font-medium" style={{ fontFamily: "var(--font-dm)" }}>
               Founding Partner
-            </p>
+            </p>  
             <p className="text-body text-sm" style={{ fontFamily: "var(--font-dm)" }}>
               ICAI Membership No.: [SAVAN_ICAI_NO]
             </p>
