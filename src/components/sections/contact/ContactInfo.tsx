@@ -98,8 +98,8 @@ export default function ContactInfo() {
               className="text-body leading-relaxed mb-10"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              Contact us today for tailored financial strategies and expert advice.
-              We&apos;re eager to help your business grow!
+              Contact us for professional services in taxation, audit,
+              accounting, compliance, and advisory.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-8 mb-10">
@@ -301,6 +301,15 @@ export default function ContactInfo() {
               >
                 Send Message
               </button>
+
+              <p
+                className="text-white/50 text-xs leading-relaxed"
+                style={{ fontFamily: "var(--font-dm)" }}
+              >
+                Submitting this form does not create a client&ndash;professional
+                relationship. Professional services commence only after a
+                formal engagement letter is signed.
+              </p>
             </form>
           </div>
 

@@ -69,16 +69,15 @@ export default function About() {
               CA. Savan M. Patel is the founding partner of the firm and brings
               extensive experience in the fields of Direct Taxation, Project Finance,
               Government Incentives, and Business Advisory Services. He specialises in
-              providing strategic financial solutions to businesses across diverse
-              industries, helping them achieve sustainable growth and regulatory
-              compliance.
+              providing financial solutions to businesses across diverse
+              industries, in line with applicable regulatory requirements.
             </p>
             <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
               He actively oversees Income Tax compliance, tax planning, assessments,
               appeals, and advisory assignments for corporate and non-corporate
               clients. His expertise in project financing enables businesses to
-              secure funding, prepare detailed project reports, and navigate complex
-              financial requirements with confidence.
+              prepare detailed project reports and navigate funding-related
+              financial requirements.
             </p>
             <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
               Apart from his professional practice, he has played a pivotal role in
@@ -157,10 +156,8 @@ export default function About() {
             <p className="text-body leading-relaxed" style={{ fontFamily: "var(--font-dm)" }}>
               In addition, he supervises Income Tax compliance engagements and
               project finance assignments, assisting businesses in maintaining
-              robust financial and regulatory frameworks. His practical approach,
-              technical expertise, and commitment to client success make him a
-              trusted advisor to entrepreneurs, SMEs, and corporate organisations
-              alike.
+              financial and regulatory compliance across entrepreneurial, SME,
+              and corporate engagements.
             </p>
           </div>
         </div>

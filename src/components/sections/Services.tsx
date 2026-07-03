@@ -62,8 +62,8 @@ export default function Services() {
           </h2>
 
           <p className="text-body text-sm leading-relaxed mb-10" style={{ fontFamily: "var(--font-dm)" }}>
-            Expert strategies to align financial goals, optimize resources, manage risks, and ensure
-            sustainable growth for long-term business success and stability
+            Professional services covering financial planning, resource
+            management, risk assessment, and regulatory compliance
           </p>
 
           {/* Feature cards */}

@@ -31,8 +31,8 @@ export default function Hero() {
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
               style={{ fontFamily: "var(--font-jakarta)" }}
             >
-              Smart Accounting{" "}
-              <span className="text-primary-light">and Finance</span> Solutions
+              Professional Accounting{" "}
+              <span className="text-primary-light">and Finance</span> Services
               for Businesses
             </h1>
 
@@ -40,8 +40,8 @@ export default function Hero() {
               className="text-white/65 text-lg leading-relaxed mb-10 max-w-lg"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              Professional accounting and financial planning services, designed
-              to help your business thrive with clarity and long-term strategy.
+              Professional services in taxation, audit, accounting,
+              compliance, and financial advisory.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

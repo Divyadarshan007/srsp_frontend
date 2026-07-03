@@ -1,5 +1,5 @@
 import SectionLabel from "@/components/ui/SectionLabel";
-import { BarChart3, Play, ArrowRight } from "lucide-react";
+import { BarChart3, ArrowRight } from "lucide-react";
 
 function MiniChart() {
   const pts = [[0,72],[25,55],[50,62],[75,40],[100,50],[125,28],[150,38],[175,18],[200,28]];
@@ -43,9 +43,8 @@ export default function AboutStrategic() {
               className="text-body leading-relaxed mb-8"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              Expert guidance on financial planning and budgeting to optimize
-              resources, control expenses, and achieve stable, long-term
-              business growth.
+              Financial planning and budgeting guidance to help manage
+              resources and control expenses.
             </p>
 
             {/* Finance Management card */}
@@ -86,21 +85,6 @@ export default function AboutStrategic() {
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-black/25" />
-              {/* Play button */}
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-                <button
-                  className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center shadow-xl hover:bg-white transition-colors duration-200"
-                  aria-label="Watch video"
-                >
-                  <Play size={17} className="text-primary ml-0.5" fill="#1F6F5B" />
-                </button>
-                <span
-                  className="text-white text-xs font-medium tracking-wide"
-                  style={{ fontFamily: "var(--font-dm)" }}
-                >
-                  Watch Video
-                </span>
-              </div>
             </div>
 
             {/* Right inner: 6k+ card + Scalable Solutions card */}
@@ -117,7 +101,7 @@ export default function AboutStrategic() {
                   className="text-white/75 text-sm leading-snug"
                   style={{ fontFamily: "var(--font-dm)" }}
                 >
-                  Unlock Your Business Potential with Financial Solutions
+                  Businesses Assisted with Financial Planning
                 </p>
               </div>
 

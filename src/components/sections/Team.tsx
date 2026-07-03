@@ -50,7 +50,6 @@ function TeamCard({ name, role, cardQual, image, visibleCount }: TeamMember & { 
 export default function Team() {
   const [current, setCurrent] = useState(0);
   const [visibleCount, setVisibleCount] = useState(3);
-  const [animated, setAnimated] = useState(true);
 
   useEffect(() => {
     const update = () => {
@@ -63,36 +62,9 @@ export default function Team() {
   }, []);
 
   const maxIndex = Math.max(0, teamMembers.length - visibleCount);
-  const loopedMembers = [...teamMembers, ...teamMembers.slice(0, visibleCount)];
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => p + 1), 2000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (current >= teamMembers.length) {
-      const t = setTimeout(() => {
-        setAnimated(false);
-        setCurrent(0);
-      }, 500);
-      return () => clearTimeout(t);
-    }
-  }, [current]);
-
-  useEffect(() => {
-    if (!animated) {
-      const id = requestAnimationFrame(() =>
-        requestAnimationFrame(() => setAnimated(true))
-      );
-      return () => cancelAnimationFrame(id);
-    }
-  }, [animated]);
 
   const prev = () => setCurrent((p) => Math.max(0, p - 1));
   const next = () => setCurrent((p) => Math.min(maxIndex, p + 1));
-
-  const activeDot = current % (maxIndex + 1);
 
   return (
     <section id="team" className="pt-12 pb-12 lg:py-24 bg-white overflow-hidden">
@@ -121,11 +93,11 @@ export default function Team() {
         <div className="relative">
           <div className="overflow-hidden">
             <div
-              className={`flex gap-6 ${animated ? "transition-transform duration-500 ease-in-out" : ""}`}
+              className="flex gap-6 transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(calc(-${current} * (${100 / visibleCount}% + ${24 / visibleCount}px)))` }}
             >
-              {loopedMembers.map((m, i) => (
-                <TeamCard key={`${m.name}-${i}`} {...m} visibleCount={visibleCount} />
+              {teamMembers.map((m) => (
+                <TeamCard key={m.name} {...m} visibleCount={visibleCount} />
               ))}
             </div>
           </div>
@@ -152,7 +124,7 @@ export default function Team() {
                 key={i}
                 onClick={() => setCurrent(i)}
                 className={`rounded-full transition-all duration-300 ${
-                  i === activeDot ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-primary-light"
+                  i === current ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-primary-light"
                 }`}
               />
             ))}

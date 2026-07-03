@@ -26,7 +26,7 @@ export const services = [
   {
     title: "Business & Finance Management",
     description:
-      "Strategic financial planning and business advisory to drive sustainable growth. We partner with clients to achieve their business objectives.",
+      "Financial planning and business advisory services, including cash flow management and business valuation support.",
     tags: ["Financial Planning", "Cash Flow Management", "Business Valuation", "Due Diligence"],
   },
   {
@@ -44,8 +44,8 @@ export const services = [
   {
     title: "Start-Up Ventures",
     description:
-      "Specialized support for start-ups including registration, funding advisory, and compliance. End-to-end assistance for new ventures.",
-    tags: ["Entity Formation", "Funding Support", "Compliance Setup", "Growth Advisory"],
+      "Support for start-ups including registration, funding advisory, and compliance requirements.",
+    tags: ["Entity Formation", "Funding Advisory", "Compliance Setup", "Business Advisory"],
   },
   {
     title: "Mergers & Acquisition Consulting",

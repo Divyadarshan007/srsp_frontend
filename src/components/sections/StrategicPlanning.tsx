@@ -10,7 +10,7 @@ const cards = [
   {
     icon: Target,
     title: "Building Strategy",
-    desc: "We craft a customized financial strategy designed to maximize growth and minimize risk at every step.",
+    desc: "We prepare a financial strategy tailored to your business requirements and risk profile.",
   },
   {
     icon: Zap,
@@ -37,9 +37,8 @@ export default function StrategicPlanning() {
               className="text-body leading-relaxed mb-8"
               style={{ fontFamily: "var(--font-dm)" }}
             >
-              Create strategies to drive financial growth, maximize returns, and
-              build sustainable business models that adapt to evolving markets
-              and deliver measurable results over the long term.
+              Financial planning support covering budgeting, compliance, and
+              long-term planning requirements, tailored to your business.
             </p>
           </div>
 

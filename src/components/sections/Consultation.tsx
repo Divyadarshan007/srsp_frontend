@@ -233,6 +233,15 @@ export default function Consultation() {
                     Send Message
                   </button>
                 </div>
+
+                <p
+                  className="text-body text-xs leading-relaxed"
+                  style={{ fontFamily: "var(--font-dm)" }}
+                >
+                  Submitting this form does not create a client&ndash;professional
+                  relationship. Professional services commence only after a
+                  formal engagement letter is signed.
+                </p>
               </form>
             </div>
           </div>
