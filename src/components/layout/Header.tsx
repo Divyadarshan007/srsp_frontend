@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Button from "@/components/ui/Button";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -63,15 +62,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:block">
-            <Link href="/contact">
-              <Button variant="primary" size="sm">
-                Login
-              </Button>
-            </Link>
-          </div>
-
           {/* Mobile toggle */}
           <button
             className="md:hidden p-2 rounded-lg text-heading hover:bg-primary-light/20 transition-colors"
@@ -100,13 +90,6 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="mt-2 px-4">
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              <Button variant="primary" size="sm" className="w-full justify-center">
-                Login
-              </Button>
-            </Link>
-          </div>
         </div>
       )}
     </header>
