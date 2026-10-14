@@ -25,6 +25,12 @@ const features = [
   },
 ];
 
+const images = [
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=70",
+];
+
 export default function Services() {
   return (
     <section
@@ -68,32 +74,32 @@ export default function Services() {
 
           {/* Feature cards */}
           <div className="grid sm:grid-cols-3 gap-4">
-            {features.map((feat) => {
+            {features.map((feat, i) => {
               const Icon = feat.icon;
               return (
                 <div
                   key={feat.title}
-                  className="group bg-primary-light/20 rounded-2xl border border-primary-light/30 p-5 shadow-sm transition-colors duration-300 hover:bg-[#c7f4aa]"
+                  className="group flex flex-col bg-[#F1F4F1] rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-lg"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
-                    <Icon size={22} className="text-white" />
+                  <div className="h-40 w-full overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={images[i]}
+                      alt={feat.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
-                  <h3 className="font-bold text-heading text-sm mb-2 group-hover:text-black transition-colors duration-300" style={{ fontFamily: "var(--font-jakarta)" }}>
-                    {feat.title}
-                  </h3>
-                  <p className="text-body text-xs leading-relaxed mb-3 group-hover:text-black transition-colors duration-300" style={{ fontFamily: "var(--font-dm)" }}>
-                    {feat.desc}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {feat.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-white text-primary text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-primary/20"
-                        style={{ fontFamily: "var(--font-dm)" }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="relative flex flex-1 flex-col px-5 pb-6">
+                    <div className="-mt-6 mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0F4A3C] shadow">
+                      <Icon size={22} className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-heading text-lg mb-2" style={{ fontFamily: "var(--font-jakarta)" }}>
+                      {feat.title}
+                    </h3>
+                    <p className="text-body text-sm leading-relaxed mb-5 line-clamp-2" style={{ fontFamily: "var(--font-dm)" }}>
+                      {feat.desc}
+                    </p>
                   </div>
                 </div>
               );

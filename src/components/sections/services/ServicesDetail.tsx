@@ -26,6 +26,15 @@ const icons = [
   FileSignature,
 ];
 
+const images = [
+  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=70",
+  "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=70",
+];
+
 export default function ServicesDetail() {
   return (
     <section className="py-12 lg:py-24 bg-[#FAFAF8]">
@@ -52,39 +61,39 @@ export default function ServicesDetail() {
         </div>
 
         {/* Service cards grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((svc, i) => {
             const Icon = icons[i] ?? Scale;
             return (
               <div
                 key={svc.title}
-                className="group bg-primary-light/20 rounded-2xl border border-primary-light/30 p-5 shadow-sm transition-colors duration-300 hover:bg-[#c7f4aa] cursor-pointer"
+                className="group flex flex-col bg-[#F1F4F1] rounded-2xl overflow-hidden transition-shadow duration-300 hover:shadow-lg"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mb-4">
-                  <Icon size={22} className="text-white" />
+                <div className="h-44 w-full overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={images[i % images.length]}
+                    alt={svc.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <h3
-                  className="font-bold text-heading text-base mb-2 group-hover:text-black transition-colors duration-300"
-                  style={{ fontFamily: "var(--font-jakarta)" }}
-                >
-                  {svc.title}
-                </h3>
-                <p
-                  className="text-body text-sm leading-relaxed mb-3 group-hover:text-black transition-colors duration-300"
-                  style={{ fontFamily: "var(--font-dm)" }}
-                >
-                  {svc.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {svc.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-white text-primary text-xs font-semibold px-2.5 py-0.5 rounded-full border border-primary/20"
-                      style={{ fontFamily: "var(--font-dm)" }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="relative flex flex-1 flex-col px-5 pb-6">
+                  <div className="-mt-6 mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#0F4A3C] shadow">
+                    <Icon size={22} className="text-white" />
+                  </div>
+                  <h3
+                    className="font-bold text-heading text-xl mb-2"
+                    style={{ fontFamily: "var(--font-jakarta)" }}
+                  >
+                    {svc.title}
+                  </h3>
+                  <p
+                    className="text-body text-sm leading-relaxed mb-5 line-clamp-2"
+                    style={{ fontFamily: "var(--font-dm)" }}
+                  >
+                    {svc.description}
+                  </p>
                 </div>
               </div>
             );
