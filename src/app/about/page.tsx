@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Header />
       <main>
         <AboutBanner />
-        <AboutStory />
+        <AboutStory bg="bg-white" />
         <About />
         <AboutTeam />
         <AboutStrategic />

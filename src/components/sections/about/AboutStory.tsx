@@ -1,8 +1,8 @@
 import SectionLabel from "@/components/ui/SectionLabel";
 
-export default function AboutStory() {
+export default function AboutStory({ bg = "bg-[#FAFAF8]" }: { bg?: string }) {
   return (
-    <section className="py-12 lg:pt-20 bg-[#FAFAF8]">
+    <section className={`py-12 lg:pt-20 ${bg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <SectionLabel text="Our Story" />
