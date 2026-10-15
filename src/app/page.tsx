@@ -6,7 +6,7 @@ import Services from "@/components/sections/Services";
 import StrategicPlanning from "@/components/sections/StrategicPlanning";
 import Team from "@/components/sections/Team";
 import Consultation from "@/components/sections/Consultation";
-import Blog from "@/components/sections/Blog";
+// import Blog from "@/components/sections/Blog";
 import AboutStory from "@/components/sections/about/AboutStory";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <PartnersPreview />
         <Team />
         <Consultation />
-        <Blog />
+        {/* <Blog /> */}
       </main>
       <Footer />
     </>

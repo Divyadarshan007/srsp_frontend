@@ -13,7 +13,7 @@ const footerColumns = [
     links: [
       { label: "Home", href: "/" },
       { label: "Services", href: "/services" },
-      { label: "Blog", href: "/blog" },
+      // { label: "Blog", href: "/blog" },
     ],
   },
   {
