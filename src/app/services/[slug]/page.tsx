@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, CheckCircle2, ArrowRight } from "lucide-react";
+import { ChevronRight, CheckCircle2, ArrowRight, ArrowLeft } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SectionLabel from "@/components/ui/SectionLabel";
@@ -83,7 +83,16 @@ export default async function ServiceDetailPage({
         <section className="bg-[#FAFAF8] py-12 lg:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
             <div className="lg:col-span-2">
-              <SectionLabel text="Service Overview" />
+              <Link
+                href="/services"
+                className="mb-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all duration-300 hover:gap-3"
+                style={{ fontFamily: "var(--font-jakarta)" }}
+              >
+                <ArrowLeft size={16} /> Back to Services
+              </Link>
+              <div>
+                <SectionLabel text="Service Overview" />
+              </div>
               <div className="mt-6 mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-[#0F4A3C] shadow">
                 <Icon size={26} className="text-white" />
               </div>
