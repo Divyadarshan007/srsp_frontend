@@ -16,15 +16,15 @@ export default function Hero() {
           backgroundImage: "url('/images/hero-banner-image.png')",
         }}
       />
-      <div className="absolute inset-0 bg-linear-to-r from-heading/96 via-heading/85 to-heading/50" />
+      <div className="absolute inset-0 bg-linear-to-r from-heading/90 via-heading/85 to-heading/90" />
 
       <div className="absolute top-1/4 right-1/4 w-32 h-32 sm:w-64 sm:h-64 rounded-full bg-primary/20 blur-3xl" />
       <div className="absolute bottom-1/3 left-1/3 w-24 h-24 sm:w-48 sm:h-48 rounded-full bg-primary-light/10 blur-3xl" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 lg:pt-48 pb-16">
+        <div className="grid gap-12 items-center">
+          {/* Centered content */}
+          <div className="text-center max-w-4xl mx-auto">
 
             <h1
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6"
@@ -36,14 +36,14 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-white/65 text-lg leading-relaxed mb-10 max-w-lg"
+              className="text-white/65 text-lg leading-relaxed mb-10 max-w-lg mx-auto"
               style={{ fontFamily: "var(--font-dm)" }}
             >
               Professional services in taxation, audit, accounting,
               compliance, and financial advisory.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/about">
                 <Button variant="light" size="lg" className="w-full sm:w-auto">
                   Discover More
@@ -61,7 +61,8 @@ export default function Hero() {
 
           </div>
 
-          {/* Right — real advisor photo */}
+          {/* Right — real advisor photo (disabled: clashes with background image)
+              Re-enable by removing this comment wrapper.
           <div className="hidden lg:flex justify-end">
             <div className="relative">
               <div className="w-105 h-125 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
@@ -72,7 +73,7 @@ export default function Hero() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-heading/40 to-transparent" />
               </div>
-              {/* Floating info card */}
+              // Floating info card
               <div className="absolute -bottom-4 -left-10 bg-white rounded-2xl px-5 py-4 shadow-2xl">
                 <p
                   className="text-heading font-bold text-sm"
@@ -87,10 +88,11 @@ export default function Hero() {
                   Chartered Accountants
                 </p>
               </div>
-              {/* Green accent ring */}
+              // Green accent ring
               <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full border-4 border-primary-light/50" />
             </div>
           </div>
+          */}
         </div>
 
       </div>
