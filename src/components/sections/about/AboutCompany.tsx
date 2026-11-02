@@ -33,9 +33,9 @@ export default function AboutCompany() {
             {/* Main image */}
             <div className="rounded-3xl overflow-hidden h-[500px] shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80"
-                alt="Professional financial advisor"
-                className="w-full h-full object-cover"
+                src="/images/office-reception.webp"
+                alt="SRSP & Co. Chartered Accountants office reception"
+                className="w-full h-full object-cover object-center"
               />
             </div>
 

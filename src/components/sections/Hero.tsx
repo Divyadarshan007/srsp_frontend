@@ -9,12 +9,11 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-heading"
     >
-      {/* Real background — blurred financial office scene */}
+      {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')",
+          backgroundImage: "url('/images/hero-banner-image.png')",
         }}
       />
       <div className="absolute inset-0 bg-linear-to-r from-heading/96 via-heading/85 to-heading/50" />

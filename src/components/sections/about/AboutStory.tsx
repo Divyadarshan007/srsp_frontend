@@ -4,7 +4,8 @@ export default function AboutStory({ bg = "bg-[#FAFAF8]" }: { bg?: string }) {
   return (
     <section className={`py-12 lg:pt-20 ${bg}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
           <SectionLabel text="Our Story" />
           <h2
             className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-heading mt-5 mb-8 leading-tight"
@@ -40,6 +41,25 @@ export default function AboutStory({ bg = "bg-[#FAFAF8]" }: { bg?: string }) {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Office photos */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-3xl overflow-hidden aspect-3/4 shadow-2xl">
+            <img
+              src="/images/office-reception.webp"
+              alt="SRSP & Co. Chartered Accountants office reception"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="rounded-3xl overflow-hidden aspect-3/4 shadow-2xl mt-10">
+            <img
+              src="/images/office-team-member.webp"
+              alt="SRSP & Co. team member at work"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
         </div>
       </div>
     </section>

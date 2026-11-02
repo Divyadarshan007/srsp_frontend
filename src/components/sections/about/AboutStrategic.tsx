@@ -80,8 +80,8 @@ export default function AboutStrategic() {
             {/* Left inner: image with play button */}
             <div className="relative rounded-2xl overflow-hidden h-64 sm:h-105">
               <img
-                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=600&q=80"
-                alt="Financial advisor presenting"
+                src="/images/office-interior.webp"
+                alt="SRSP & Co. modern glass-walled office"
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-black/25" />

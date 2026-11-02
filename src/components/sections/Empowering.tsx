@@ -20,9 +20,9 @@ export default function Empowering() {
               {/* Large image — people in business meeting */}
               <div className="col-span-2 rounded-2xl overflow-hidden h-64 shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80"
-                  alt="Business team collaborating"
-                  className="w-full h-full object-cover"
+                  src="/images/office-team-member.webp"
+                  alt="SRSP & Co. team member at work"
+                  className="w-full h-full object-cover object-[center_45%]"
                 />
               </div>
 
